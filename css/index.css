@@ -1,0 +1,512 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap');
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+/* // 美化滚动条 */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  width: 6px;
+  background: rgba(#101F1C, 0.1);
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  border-radius: 2em;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(144,147,153,.5);
+  background-clip: padding-box;
+  min-height: 28px;
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  border-radius: 2em;
+  transition: background-color .3s;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(144,147,153,.3);
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+    color: #222;
+    font-family: "微软雅黑";
+}
+
+html,
+body {
+    background: url("../img/backgroundf.jpg") no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-size: 20px;
+    color: #ffffff;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/*头部*/
+.header {
+    position: flex;
+    top: 0px;
+    height: 10vh;
+    width: 100%;
+}
+
+/*头部左边*/
+.header .header-left {
+    float: left;
+    width: 35%;
+    height: 100%;
+    color: #ffffff;
+    line-height: 1.2rem;
+    padding-left: .5rem;
+    font-size: .8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+/*头部中间*/
+.header .header-cen {
+    float: left;
+    width: 30%;
+    height: 100%;
+    background: url("../img/b.png") no-repeat center ;
+    background-size: cover;
+    text-align: center;
+    line-height: 2.5rem;
+    display: grid;
+    place-items: center;
+}
+.header .header-cen h1 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    letter-spacing: 0.2rem;
+    text-shadow: 0 0 .3rem #00d8ff;
+    ;
+}
+
+/*头部右边*/
+.header .header-right {
+    float: right;
+    width: 35%;
+    height: 100%;
+}
+/* 下面所有 */
+#dowm{
+    display: flex;
+}
+/* 左边部分 */
+#left{
+    position: relative;
+    margin: 20px;
+    display: block;
+    width: 50%;
+    height:90vh;
+}
+/* 天气状况容器 */
+
+:root {
+	--gradient: linear-gradient( 135deg, #72EDF2 10%, #5151E5 100%);
+}
+
+
+.clear {
+	clear: both;
+}
+#containers{
+    height: 80vh;
+    width: 100%;
+    overflow: auto;
+}
+#container{
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    width: 100%;
+    height: 50%;
+    transform: scale(0.5);
+    transform-origin: top left;
+    /* overflow: auto; */
+
+}
+.container {
+    margin: 40px;
+    display: flex;
+	border-radius: 25px;
+	-webkit-box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
+	        box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
+	background-color: #222831;
+	color: #ffffff;
+	height: 400px;
+    /* transform: scale(0.5); */
+}
+
+.weather-side {
+	position: relative;
+	height: 100%;
+	border-radius: 25px;
+	background-image: url("https://images.unsplash.com/photo-1559963110-71b394e7494d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80");
+	width: 300px;
+	-webkit-box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.2);
+	        box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.2);
+	-webkit-transition: -webkit-transform 300ms ease;
+	transition: -webkit-transform 300ms ease;
+	-o-transition: transform 300ms ease;
+	transition: transform 300ms ease;
+	transition: transform 300ms ease, -webkit-transform 300ms ease;
+	-webkit-transform: translateZ(0) scale(1.02) perspective(1000px);
+	        transform: translateZ(0) scale(1.02) perspective(1000px);
+	float: left;
+}
+
+.weather-side:hover {
+	-webkit-transform: scale(1.1) perspective(1500px) rotateY(10deg);
+	        transform: scale(1.1) perspective(1500px) rotateY(10deg);
+}
+
+.weather-gradient {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-image: var(--gradient);
+	border-radius: 25px;
+	opacity: 0.8;
+}
+
+.date-container {
+	position: absolute;
+	top: 25px;
+	left: 25px;
+}
+
+.date-dayname {
+	margin: 0;
+}
+
+.date-day {
+	display: block;
+}
+
+.location {
+	display: inline-block;
+	margin-top: 10px;
+}
+
+.location-icon {
+	display: inline-block;
+	height: 0.8em;
+	width: auto;
+	margin-right: 5px;
+}
+
+.weather-container {
+	position: absolute;
+	bottom: 25px;
+	left: 25px;
+}
+
+.weather-icon.feather {
+	height: 60px;
+	width: auto;
+}
+
+.weather-temp {
+	margin: 0;
+	font-weight: 700;
+	font-size: 4em;
+}
+
+.weather-desc {
+	margin: 0;
+}
+
+.info-side {
+	position: relative;
+	float: left;
+	height: 100%;
+	padding-top: 25px;
+}
+.x{
+	position:absolute;
+	left: 90%;
+	top: 0%;
+	height: 40px;
+	width: 40px;
+	line-height: 2;
+	background-color:rgb(133,223,237);
+	border-radius: 10px;
+
+}
+.x:hover{
+	background-color: rgb(15, 30, 37);
+	cursor:pointer;
+}
+.today-info {
+	padding: 15px;
+	margin: 0 25px 25px 25px;
+/* 	box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25); */
+	border-radius: 10px;
+}
+
+.today-info>div:not(:last-child) {
+	margin: 0 0 10px 0;
+}
+
+.today-info>div .title {
+	float: left;
+	font-weight: 700;
+}
+
+.today-info>div .value {
+	float: right;
+}
+
+.week-list {
+	display: flex;
+	list-style-type: none;
+	padding: 0;
+	margin: 10px 35px;
+	-webkit-box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25);
+	        box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+
+}
+
+.week-list>li {
+	float: left;
+	padding: 15px;
+	cursor: pointer;
+	-webkit-transition: 200ms ease;
+	-o-transition: 200ms ease;
+	transition: 200ms ease;
+	border-radius: 10px;
+}
+
+.week-list>li:hover {
+	-webkit-transform: scale(1.1);
+	    -ms-transform: scale(1.1);
+	        transform: scale(1.1);
+	background: #fff;
+	color: #222831;
+	-webkit-box-shadow: 0 0 40px -5px rgba(0, 0, 0, 0.2);
+	        box-shadow: 0 0 40px -5px rgba(0, 0, 0, 0.2)
+}
+
+.week-list>li.active {
+	background: #fff;
+	color: #222831;
+	border-radius: 10px;
+}
+
+.week-list>li .day-name {
+	display: block;
+	margin: 10px 0 0 0;
+	text-align: center;
+}
+
+.week-list>li .day-icon {
+	display: block;
+	height: 30px;
+	width: auto;
+	margin: 0 auto;
+}
+
+.week-list>li .day-temp {
+	display: block;
+	text-align: center;
+	margin: 10px 0 0 0;
+	font-weight: 700;
+}
+.inputBox {
+    position: relative;
+    width: 250px;
+}
+
+.inputBox input {
+    width: 100%;
+    padding: 10px 0 5px;
+    background: transparent;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    color: #fff;
+    font-size: 1em;
+    letter-spacing: 0.1em;
+    transition: 0.5s;
+}
+
+.inputBox span {
+    position: absolute;
+    left: 0;
+    padding: 10px 0 5px;
+    pointer-events: none;
+    font-size: 1em;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    /* 定义无小写字母，仅有大写字母 */
+    letter-spacing: 0.1em;
+    /* 是增加（值为正）或减少（值为负）字符间距 */
+    transition: 0.5s;
+}
+
+.inputBox input:valid~span,
+/* 表单元素的值需要根据指定条件验证时设置指定样式 */
+
+.inputBox input:focus~span
+
+/* 选择具有焦点的时候 */
+    {
+    color: #b0a4e3;
+    transform: translateY(-16px);
+    /* 将文字向Y轴（向上）平移16px */
+    font-size: 0.65em;
+}
+
+.inputBox i
+
+/* 可见的一个线 */
+    {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.inputBox i::before
+
+/* 在i标签的左边创建（伪元素）一个跟i等大的一条线，加上炫彩颜色 */
+    {
+    content: '';
+    position: absolute;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #EEBD89, #D13ABD, #C973FF, #6CC6CB, #9FA5D5, #EAD6EE);
+    animation: runing 1s linear infinite;
+    transition: 0.5s;
+}
+
+.inputBox input:valid~i::before,
+.inputBox input:focus~i::before {
+    left: 0;
+}
+
+/* 创建动画 */
+@keyframes runing {
+    0% {
+        background-position-x: 0;
+    }
+
+    100% {
+        background-position-x: 250px;
+    }
+}
+/* 右边部分 */
+#right{
+    display: block;
+    width: 50%;
+    height: 90vh;
+    background-color: brown;
+}
+/* 右上轮播 */
+
+#right-top{
+    height: 50%;
+    height: 50vh;
+    background-color: #000;
+    perspective: 900px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0.8);
+}
+.content {
+    margin-top: -150px;
+    width: 300px;
+    height: 180px;
+    cursor: pointer;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotate 20s linear infinite;
+}
+
+.content:hover {
+    animation-play-state: paused;
+}
+
+img {
+    width: 200px;
+    height: 150px;
+}
+
+.content div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 通过html5的-webkit-box-reflect来做倒影 */
+    /* box-reflect属性值有：dirrection-方向:above向上，below向下，left向左，right向右。
+    offset距离：可以是数值，也可以是百分比： mask-box-image设置倒影的遮罩图像：（1）url（2）linear-gradient线性渐变创建遮罩图像。（3）repeating-linear-gradient重复线性渐变创建遮罩图像。（4）repeating-url重复径向径向渐变创建遮罩图像。
+ */
+    -webkit-box-reflect: below 15px linear-gradient(transparent 80%, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3));
+}
+
+.content div:nth-child(1) {
+    transform: translateZ(300px);
+    background-color: #c14c39;
+}
+
+.content div:nth-child(2) {
+    transform: rotateY(60deg) translateZ(300px);
+    background-color: #6e9c72;
+}
+
+.content div:nth-child(3) {
+    transform: rotateY(120deg) translateZ(300px);
+    background-color: #5e5f7a;
+}
+
+.content div:nth-child(4) {
+    transform: rotateY(180deg) translateZ(300px);
+    background-color: #f5eb98;
+}
+
+.content div:nth-child(5) {
+    transform: rotateY(240deg) translateZ(300px);
+    background-color: #50a3bc;
+}
+
+.content div:nth-child(6) {
+    transform: rotateY(300deg) translateZ(300px);
+    background-color: #f9a99a;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotateY(0);
+    }
+
+    100% {
+        transform: rotateY(360deg);
+    }
+}
